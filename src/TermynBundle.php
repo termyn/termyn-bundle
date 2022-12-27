@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace src;
+namespace Termyn\Bundle;
 
 use Symfony\Component\HttpKernel\Bundle\Bundle;
 use Symfony\Component\HttpKernel\Bundle\BundleInterface;
