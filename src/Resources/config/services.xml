@@ -31,10 +31,10 @@
 
         <!-- Clock -->
 
-        <service id="Termyn\DateTime\Clock" alias="Termyn\Clock\System\SystemClock"/>
+        <service id="Termyn\DateTime\Clock" alias="Termyn\DateTime\Clock\System\SystemClock"/>
         <service id="Termyn\DateTime\Clock\System\SystemClock"/>
 
-        <service id="Termyn\DateTime\Clock\AdjustableClock" alias="Termyn\Clock\System\SystemAdjustableClock"/>
+        <service id="Termyn\DateTime\Clock\AdjustableClock" alias="Termyn\DateTime\Clock\System\SystemAdjustableClock"/>
         <service id="Termyn\DateTime\Clock\System\SystemAdjustableClock"/>
 
         <!-- Ddd -->
