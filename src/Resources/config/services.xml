@@ -47,13 +47,13 @@
 
         <!-- Id -->
 
-        <service id="Termyn\Id\Uuid\UuidValidator" alias="Termyn\Id\Uuid\RegexUuidValidator"/>
-        <service id="Termyn\Id\Uuid\RegexUuidValidator"/>
+        <service id="Termyn\Uuid\UuidValidator" alias="Termyn\Uuid\RegexUuidValidator"/>
+        <service id="Termyn\Uuid\RegexUuidValidator"/>
 
-        <service id="Termyn\Id\Uuid\UuidGenerator" alias="Termyn\Id\Uuid\Symfony\SymfonyRandomUuidGenerator"/>
-        <service id="Termyn\Id\Uuid\Symfony\SymfonyRandomUuidGenerator"/>
+        <service id="Termyn\Uuid\UuidGenerator" alias="Termyn\Uuid\Symfony\SymfonyRandomUuidGenerator"/>
+        <service id="Termyn\Uuid\Symfony\SymfonyRandomUuidGenerator"/>
 
-        <service id="Termyn\Id\Uuid\UuidFactory" alias="Termyn\Id\Uuid\Symfony\SymfonyNamedUuidFactory"/>
-        <service id="Termyn\Id\Uuid\Symfony\SymfonyNamedUuidFactory"/>
+        <service id="Termyn\Uuid\UuidFactory" alias="Termyn\Uuid\Symfony\SymfonyNamedUuidFactory"/>
+        <service id="Termyn\Uuid\Symfony\SymfonyNamedUuidFactory"/>
     </services>
 </container>
