@@ -50,10 +50,10 @@
         <service id="Termyn\Id\Uuid\UuidValidator" alias="Termyn\Id\Uuid\RegexUuidValidator"/>
         <service id="Termyn\Id\Uuid\RegexUuidValidator"/>
 
-        <service id="Termyn\Id\Uuid\RandomUuidGenerator" alias="Termyn\Id\Uuid\Symfony\SymfonyRandomUuidGenerator"/>
+        <service id="Termyn\Id\Uuid\UuidGenerator" alias="Termyn\Id\Uuid\Symfony\SymfonyRandomUuidGenerator"/>
         <service id="Termyn\Id\Uuid\Symfony\SymfonyRandomUuidGenerator"/>
 
-        <service id="Termyn\Id\Uuid\NamedUuidFactory" alias="Termyn\Id\Uuid\Symfony\SymfonyNamedUuidFactory"/>
+        <service id="Termyn\Id\Uuid\UuidFactory" alias="Termyn\Id\Uuid\Symfony\SymfonyNamedUuidFactory"/>
         <service id="Termyn\Id\Uuid\Symfony\SymfonyNamedUuidFactory"/>
     </services>
 </container>
