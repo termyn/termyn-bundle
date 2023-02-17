@@ -58,5 +58,9 @@
 
         <service id="Termyn\Uuid\UuidNamedFactory" alias="Termyn\Uuid\Symfony\SymfonyNamedUuidFactory"/>
         <service id="Termyn\Uuid\Symfony\SymfonyNamedUuidFactory"/>
+
+        <service id="Termyn\Bundle\Id\IdValueResolver">
+            <tag name="controller.argument_value_resolver" priority="150" />
+        </service>
     </services>
 </container>
