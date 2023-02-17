@@ -53,7 +53,10 @@
         <service id="Termyn\Uuid\UuidGenerator" alias="Termyn\Uuid\Symfony\SymfonyRandomUuidGenerator"/>
         <service id="Termyn\Uuid\Symfony\SymfonyRandomUuidGenerator"/>
 
-        <service id="Termyn\Uuid\UuidFactory" alias="Termyn\Uuid\Symfony\SymfonyNamedUuidFactory"/>
+        <service id="Termyn\Uuid\UuidFactory" alias="Termyn\Uuid\Symfony\SymfonyUuidFactory"/>
+        <service id="Termyn\Uuid\Symfony\SymfonyUuidFactory"/>
+
+        <service id="Termyn\Uuid\UuidNamedFactory" alias="Termyn\Uuid\Symfony\SymfonyNamedUuidFactory"/>
         <service id="Termyn\Uuid\Symfony\SymfonyNamedUuidFactory"/>
     </services>
 </container>
