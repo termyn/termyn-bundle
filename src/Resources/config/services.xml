@@ -7,6 +7,10 @@
     <services>
         <defaults autowire="true" autoconfigure="false" public="false" />
 
+        <instanceof id="Symfony\Component\HttpKernel\Controller\ValueResolverInterface" autowire="true">
+            <tag name="controller.argument_value_resolver" priority="150" />
+        </instanceof>
+
         <!-- Cqrs -->
 
         <service id="Termyn\Cqrs\Messaging\Messenger\Middleware\AckHandledCommandMiddleware"/>
@@ -59,8 +63,7 @@
         <service id="Termyn\Uuid\UuidNamedFactory" alias="Termyn\Uuid\Symfony\SymfonyNamedUuidFactory"/>
         <service id="Termyn\Uuid\Symfony\SymfonyNamedUuidFactory"/>
 
-        <service id="Termyn\Bundle\Id\IdValueResolver">
-            <tag name="controller.argument_value_resolver" priority="150" />
-        </service>
+        <service id="Termyn\Bundle\ValueResolver\IdValueResolver"/>
+        <service id="Termyn\Bundle\ValueResolver\InstantValueResolver"/>
     </services>
 </container>

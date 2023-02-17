@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace Termyn\Bundle\Id;
+namespace Termyn\Bundle\ValueResolver;
 
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpKernel\Controller\ValueResolverInterface as ValueResolver;
@@ -34,7 +34,7 @@ final readonly class IdValueResolver implements ValueResolver
         }
 
         return [
-            $this->uuidFactory->create($parameter)
+            $this->uuidFactory->create($parameter),
         ];
     }
 
