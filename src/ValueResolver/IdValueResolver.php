@@ -28,7 +28,7 @@ final readonly class IdValueResolver implements ValueResolver
             return [];
         }
 
-        $parameter = $request->get($argument->getName()) ?? '';
+        $parameter = sprintf('%s', $request->get($argument->getName()));
         if (! $this->isValidUuid($parameter)) {
             return [];
         }
