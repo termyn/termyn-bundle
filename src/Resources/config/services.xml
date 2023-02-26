@@ -8,7 +8,7 @@
         <defaults autowire="true" autoconfigure="false" public="false" />
 
         <instanceof id="Symfony\Component\HttpKernel\Controller\ValueResolverInterface" autowire="true">
-            <tag name="controller.argument_value_resolver" priority="150" />
+            <tag name="controller.argument_value_resolver" priority="256" />
         </instanceof>
 
         <!-- Cqrs -->
@@ -63,7 +63,8 @@
         <service id="Termyn\Uuid\UuidNamedFactory" alias="Termyn\Uuid\Symfony\SymfonyNamedUuidFactory"/>
         <service id="Termyn\Uuid\Symfony\SymfonyNamedUuidFactory"/>
 
-        <service id="Termyn\Bundle\ValueResolver\IdValueResolver"/>
+        <service id="Termyn\Bundle\ValueResolver\RequiredUuidValueResolver"/>
+        <service id="Termyn\Bundle\ValueResolver\NullableUuidValueResolver"/>
         <service id="Termyn\Bundle\ValueResolver\InstantValueResolver"/>
     </services>
 </container>
