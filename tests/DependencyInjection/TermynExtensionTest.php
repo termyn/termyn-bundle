@@ -4,6 +4,8 @@ declare(strict_types=1);
 
 namespace Termyn\Bundle\Messaging\Test\DependencyInjection;
 
+use PHPUnit\Framework\Attributes\DataProvider;
+use PHPUnit\Framework\Attributes\Test;
 use PHPUnit\Framework\TestCase;
 use Symfony\Component\DependencyInjection\ContainerBuilder;
 use Termyn\Bundle\DependencyInjection\TermynExtension;
@@ -28,7 +30,8 @@ final class TermynExtensionTest extends TestCase
         parent::setUp();
     }
 
-    public function testItContainsMessengerConfigs(): void
+    #[Test]
+    public function shouldExistBusConfigs(): void
     {
         $this->extension->prepend($this->container);
 
@@ -38,17 +41,16 @@ final class TermynExtensionTest extends TestCase
         $this->assertArrayHasKey('buses', $messengerConfigs);
     }
 
-    /**
-     * @dataProvider provideBusIds
-     */
-    public function testItRegistersExpectedBuses(string $busId): void
+    #[Test]
+    #[DataProvider('provideBusIds')]
+    public function shouldBeRegisterExpectedBuses(string $busId): void
     {
         $this->extension->prepend($this->container);
 
         $this->assertArrayHasKey($busId, $this->resolveMessengerConfig()['buses']);
     }
 
-    public function provideBusIds(): array
+    public static function provideBusIds(): array
     {
         return [
             'command-bus' => [
@@ -63,20 +65,18 @@ final class TermynExtensionTest extends TestCase
         ];
     }
 
-    /**
-     * @dataProvider provideHandlerSettings
-     */
-    public function testItRegistersAutoconfigurationOfHandlers(string $id): void
+    #[Test]
+    #[DataProvider('provideHandlerSettings')]
+    public function shouldBeAutoconfigureHandlers(string $id): void
     {
         $this->extension->prepend($this->container);
 
         $this->assertArrayHasKey($id, $this->container->getAutoconfiguredInstanceof());
     }
 
-    /**
-     * @dataProvider provideHandlerSettings
-     */
-    public function testItSetsAutoconfigurationTags(string $id, array $tags): void
+    #[Test]
+    #[DataProvider('provideHandlerSettings')]
+    public function shouldHasTags(string $id, array $tags): void
     {
         $this->extension->prepend($this->container);
 
@@ -88,7 +88,7 @@ final class TermynExtensionTest extends TestCase
         }
     }
 
-    public function provideHandlerSettings(): array
+    public static function provideHandlerSettings(): array
     {
         return [
             'command-handler' => [
@@ -124,14 +124,16 @@ final class TermynExtensionTest extends TestCase
     /**
      * @dataProvider provideServiceIds
      */
-    public function testItRegistersExpectedServices(string $serviceId): void
+    #[Test]
+    #[DataProvider('provideServiceIds')]
+    public function shouldBeRegisterExpectedServices(string $serviceId): void
     {
         $this->extension->load([], $this->container);
 
         $this->assertTrue($this->container->hasDefinition($serviceId));
     }
 
-    public function provideServiceIds(): array
+    public static function provideServiceIds(): array
     {
         return [
             'command-bus' => [
