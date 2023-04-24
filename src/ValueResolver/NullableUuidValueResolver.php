@@ -41,7 +41,8 @@ final readonly class NullableUuidValueResolver implements ValueResolver
     private function supports(
         ArgumentMetadata $argument,
     ): bool {
-        return is_a($argument->getType(), Uuid::class, true)
+        return $argument->getType()
+            && is_a($argument->getType(), Uuid::class, true)
             && ! $argument->isVariadic()
             && ($argument->isNullable() || $argument->hasDefaultValue());
     }
