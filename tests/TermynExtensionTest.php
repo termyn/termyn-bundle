@@ -2,13 +2,13 @@
 
 declare(strict_types=1);
 
-namespace Termyn\Bundle\Messaging\Test\DependencyInjection;
+namespace Termyn\Bundle\Test;
 
 use PHPUnit\Framework\Attributes\DataProvider;
 use PHPUnit\Framework\Attributes\Test;
 use PHPUnit\Framework\TestCase;
 use Symfony\Component\DependencyInjection\ContainerBuilder;
-use Termyn\Bundle\DependencyInjection\TermynExtension;
+use Termyn\Bundle\TermynExtension;
 use Termyn\Cqrs\CommandHandler;
 use Termyn\Cqrs\Messaging\CommandBus;
 use Termyn\Cqrs\Messaging\QueryBus;
