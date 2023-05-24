@@ -18,6 +18,7 @@ use Termyn\Cqrs\Messaging\Messenger\Middleware\ResolveHandledQueryResultMiddlewa
 use Termyn\Cqrs\Messaging\Messenger\Middleware\ValidateMessageMiddleware;
 use Termyn\Cqrs\QueryHandler;
 use Termyn\Ddd\DomainEventHandler;
+use Termyn\Mesh\IntegrationEventHandler;
 
 final class TermynExtension extends Extension implements ExtensionInterface, PrependExtensionInterface
 {
@@ -48,6 +49,13 @@ final class TermynExtension extends Extension implements ExtensionInterface, Pre
             ],
         ],
         'termyn.ddd.domain_event_bus' => [
+            'default_middleware' => [
+                'enabled' => true,
+                'allow_no_handlers' => true,
+                'allow_no_senders' => true,
+            ],
+        ],
+        'termyn.mesh.integration_event_bus' => [
             'default_middleware' => [
                 'enabled' => true,
                 'allow_no_handlers' => true,
@@ -123,6 +131,12 @@ final class TermynExtension extends Extension implements ExtensionInterface, Pre
             ->addTag('termyn.ddd.domain_event_handler')
             ->addTag('messenger.message_handler', [
                 'bus' => 'termyn.ddd.domain_event_bus',
+            ]);
+
+        $container->registerForAutoconfiguration(IntegrationEventHandler::class)
+            ->addTag('termyn.mesh.integration_event_handler')
+            ->addTag('messenger.message_handler', [
+                'bus' => 'termyn.mesh.integration_event_bus',
             ]);
     }
 }

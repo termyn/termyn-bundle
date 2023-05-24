@@ -66,5 +66,13 @@
         <service id="Termyn\Bundle\ValueResolver\RequiredUuidValueResolver"/>
         <service id="Termyn\Bundle\ValueResolver\NullableUuidValueResolver"/>
         <service id="Termyn\Bundle\ValueResolver\InstantValueResolver"/>
+
+        <!-- Mesh -->
+
+        <service id="Termyn\Mesh\Messaging\IntegrationEventBus"
+                 class="Termyn\Mesh\Messaging\Messenger\SymfonyMessengerIntegrationEventBus"
+                 autowire="false">
+            <argument type="service" id="termyn.mesh.integration_event_bus"/>
+        </service>
     </services>
 </container>

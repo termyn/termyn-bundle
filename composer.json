@@ -28,6 +28,7 @@
         "termyn/date-time": "dev-main",
         "termyn/ddd": "dev-master",
         "termyn/id": "dev-main",
+        "termyn/mesh": "dev-main",
         "termyn/money": "dev-main",
         "symfony/framework-bundle": "5.*|6.*"
     },
