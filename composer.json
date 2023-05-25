@@ -24,7 +24,7 @@
     },
     "require": {
         "php": "^8.2",
-        "termyn/cqrs": "dev-master",
+        "termyn/cqrs": "0.1.*",
         "termyn/date-time": "dev-main",
         "termyn/ddd": "dev-master",
         "termyn/id": "dev-main",
